@@ -11,6 +11,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Hariko Blog is a child theme that uses the Hariko theme as its parent.
 
 == Changelog ==
+= 1.0.2 =
+* Parent theme update hooks
 
 = 1.0 =
 * Initial release
