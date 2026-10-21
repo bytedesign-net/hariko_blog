@@ -8,13 +8,15 @@ function hariko_blog_enqueue_styles() {
 	);
 
 	wp_enqueue_style(
-		'hariko-parent-style',
-		get_parent_theme_file_uri( 'assets/css/style.css' )
+		'hariko-parent-assets',
+		get_parent_theme_file_uri( 'assets/css/style.css' ),
+		array( 'hariko-parent-style' )
 	);
 	
 	wp_enqueue_style(
 		'hariko_blog-style',
-		get_theme_file_uri( 'assets/css/style.css' )
+		get_stylesheet_directory_uri() . '/assets/css/style.css',
+		array( 'hariko-parent-assets' )
 	);
 
 	wp_enqueue_block_style( 'core/search', 'hariko_blog-block-search' );
@@ -49,20 +51,9 @@ function hariko_blog_enqueue_styles() {
 }
 
 // フロント側のスタイル
-add_action( 'after_setup_theme', 'hariko_custom_support' );
-function hariko_custom_support() {
+add_action( 'after_setup_theme', 'hariko_blog_support' );
+function hariko_blog_support() {
 	add_theme_support( 'wp-block-styles' );
-	add_editor_style('style.css');
-	$fonts = array(
-		'font-1' => get_template_directory_uri() . '/assets/fonts/NotoSansJP-Regular.ttf',
-		'font-2' => get_template_directory_uri() . '/assets/fonts/NotoSansJP-Bold.ttf',
-		'font-3' => get_template_directory_uri() . '/assets/fonts/NotoSansJP-Thin.ttf',
-		'font-4' => get_template_directory_uri() . '/assets/fonts/NotoSansJP-Black.ttf',
-		'font-5' => get_template_directory_uri() . '/assets/fonts/NotoSerifJP-Regular.otf',
-		'font-6' => get_template_directory_uri() . '/assets/fonts/NotoSerifJP-Bold.otf',
-		'font-7' => get_template_directory_uri() . '/assets/fonts/NotoSerifJP-Light.otf',
-		'font-8' => get_template_directory_uri() . '/assets/fonts/NotoSerifJP-Black.otf',
-		'font-9' => get_template_directory_uri() . '/assets/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2',
-	);
-    array_walk($fonts, 'wp_enqueue_style');
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'style.css' );
 }

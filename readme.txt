@@ -1,16 +1,20 @@
 === Hariko Blog ===
 Contributors: 
 Requires at least: 6.5.2
-Tested up to: 6.5.2
+Tested up to: 7.1.3
 Requires PHP: 7.0
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
 Hariko Blog is a child theme that uses the Hariko theme as its parent.
 
 == Changelog ==
+= 1.0.6 =
+* Updated theme.json for WordPress 7.1 compatibility.
+* Fixed template part metadata, stylesheet loading, and the skip-link target.
+
 = 1.0.5 =
 * Parent theme update hooks
 
@@ -22,6 +26,10 @@ Hariko Blog is a child theme that uses the Hariko theme as its parent.
 
 = 1.0.2 =
 * Parent theme update hooks
+
+= 1.0.1 =
+* Updated theme.json for WordPress 7.1 compatibility.
+* Fixed template part metadata, stylesheet loading, and the skip-link target.
 
 = 1.0 =
 * Initial release
